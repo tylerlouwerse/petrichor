@@ -1,0 +1,40 @@
+{
+  "name": "game-frontend",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "@tresjs/cientos": "^4.3.1",
+    "@tresjs/core": "^4.3.6",
+    "@types/three": "^0.178.1",
+    "laravel-echo": "^2.1.7",
+    "pinia": "^3.0.3",
+    "pusher-js": "^8.4.0",
+    "tailwindcss": "^4.1.11",
+    "three": "^0.178.0",
+    "vue": "^3.5.18",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@tsconfig/node18": "^18.0.0",
+    "@types/node": "^18.19.0",
+    "@vitejs/plugin-vue": "^5.2.0",
+    "@vue/tsconfig": "^0.7.0",
+    "npm-run-all2": "^6.2.0",
+    "typescript": "~5.6.0",
+    "vite": "^5.4.0",
+    "vite-plugin-vue-devtools": "^7.4.0",
+    "vue-tsc": "^2.1.0"
+  }
+}
