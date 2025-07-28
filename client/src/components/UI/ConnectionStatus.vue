@@ -1,24 +1,24 @@
 <template>
   <div
-    class="flex items-center gap-2 bg-black/80 p-2 rounded-2xl text-white text-sm"
+    class="flex items-center gap-2 rounded-2xl bg-black/80 p-2 text-sm text-white"
     :class="{ connected: isConnected, disconnected: !isConnected }"
     @click="gameStore.connectToServer"
   >
-    <div class="status-indicator"></div>
-    <span>{{ isConnected ? "Connected" : "Disconnected" }}</span>
+    <div class="status-indicator" />
+    <span>{{ isConnected ? 'Connected' : 'Disconnected' }}</span>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useGameStore } from "../../stores/game";
+import { useGameStore } from '../../stores/game'
 
-const gameStore = useGameStore();
+const gameStore = useGameStore()
 
 interface Props {
-  isConnected: boolean;
+  isConnected: boolean
 }
 
-defineProps<Props>();
+defineProps<Props>()
 </script>
 
 <style scoped>

@@ -1,22 +1,22 @@
-import "./assets/main.css";
+import './assets/main.css'
 
-import { createApp } from "vue";
-import { createPinia } from "pinia";
-import { extend, TresCanvas } from "@tresjs/core";
-import * as THREE from "three";
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import { extend, TresCanvas } from '@tresjs/core'
+import * as THREE from 'three'
 
-import App from "./App.vue";
-import router from "./router";
+import App from './App.vue'
+import router from './router'
 
 // Extend TresJS with all Three.js objects
-extend(THREE);
+extend(THREE)
 
-const app = createApp(App);
+const app = createApp(App)
 
-app.use(createPinia());
-app.use(router);
+app.use(createPinia())
+app.use(router)
 
 // Register TresCanvas globally
-app.component("TresCanvas", TresCanvas);
+app.component('TresCanvas', TresCanvas)
 
-app.mount("#app");
+app.mount('#app')

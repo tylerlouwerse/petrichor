@@ -10,10 +10,7 @@
       <div class="stat-bar">
         <div class="stat-label">Health</div>
         <div class="bar-container">
-          <div
-            class="bar health-bar"
-            :style="{ width: healthPercentage + '%' }"
-          ></div>
+          <div class="bar health-bar" :style="{ width: healthPercentage + '%' }" />
           <div class="bar-text">{{ player.health }}/{{ player.maxHealth }}</div>
         </div>
       </div>
@@ -22,10 +19,7 @@
       <div class="stat-bar">
         <div class="stat-label">Mana</div>
         <div class="bar-container">
-          <div
-            class="bar mana-bar"
-            :style="{ width: manaPercentage + '%' }"
-          ></div>
+          <div class="bar mana-bar" :style="{ width: manaPercentage + '%' }" />
           <div class="bar-text">{{ player.mana }}/{{ player.maxMana }}</div>
         </div>
       </div>
@@ -34,22 +28,18 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import type { Player } from "../../stores/game";
+import { computed } from 'vue'
+import type { Player } from '../../stores/game'
 
 interface Props {
-  player: Player;
+  player: Player
 }
 
-const props = defineProps<Props>();
+const props = defineProps<Props>()
 
-const healthPercentage = computed(
-  () => (props.player.health / props.player.maxHealth) * 100
-);
+const healthPercentage = computed(() => (props.player.health / props.player.maxHealth) * 100)
 
-const manaPercentage = computed(
-  () => (props.player.mana / props.player.maxMana) * 100
-);
+const manaPercentage = computed(() => (props.player.mana / props.player.maxMana) * 100)
 </script>
 
 <style scoped>

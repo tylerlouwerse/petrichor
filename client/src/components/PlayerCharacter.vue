@@ -21,25 +21,18 @@
 </template>
 
 <script setup lang="ts">
-import type { Player, Position3D } from "../stores/game";
+import type { Player, Position3D } from '../stores/game'
 
 interface Props {
-  position: Position3D;
-  characterData?: Player;
+  position: Position3D
+  characterData?: Player
 }
 
-const props = defineProps<Props>();
+const props = defineProps<Props>()
 
 function getPlayerColor(): string {
   // Different colors for different players
-  const colors = [
-    "#ff6b6b",
-    "#4ecdc4",
-    "#45b7d1",
-    "#f9ca24",
-    "#f0932b",
-    "#eb4d4b",
-  ];
-  return colors[(props.characterData?.id || 0) % colors.length];
+  const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#f0932b', '#eb4d4b']
+  return colors[(props.characterData?.id || 0) % colors.length]
 }
 </script>
