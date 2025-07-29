@@ -8,28 +8,27 @@ import globals from 'globals'
 
 export default [
   js.configs.recommended,
-  ...pluginVue.configs['flat/recommended'],
   {
     files: ['**/*.{js,mjs,cjs,ts}'],
     languageOptions: {
       parser: parserTypeScript,
       parserOptions: {
         ecmaVersion: 'latest',
-        sourceType: 'module'
+        sourceType: 'module',
       },
       globals: {
         ...globals.browser,
-        ...globals.es2021
-      }
+        ...globals.es2021,
+      },
     },
     plugins: {
       '@typescript-eslint': pluginTypeScript,
-      'import': pluginImport
+      import: pluginImport,
     },
     rules: {
       '@typescript-eslint/no-unused-vars': 'warn',
-      'no-unused-vars': 'off'
-    }
+      'no-unused-vars': 'off',
+    },
   },
   {
     files: ['**/*.vue'],
@@ -39,17 +38,17 @@ export default [
         parser: parserTypeScript,
         ecmaVersion: 'latest',
         sourceType: 'module',
-        extraFileExtensions: ['.vue']
+        extraFileExtensions: ['.vue'],
       },
       globals: {
         ...globals.browser,
-        ...globals.es2021
-      }
+        ...globals.es2021,
+      },
     },
     plugins: {
       '@typescript-eslint': pluginTypeScript,
-      'import': pluginImport,
-      'vue': pluginVue
+      import: pluginImport,
+      vue: pluginVue,
     },
     rules: {
       'vue/multi-word-component-names': 0,
@@ -57,18 +56,18 @@ export default [
       'vue/no-mutating-props': 1,
       'vue/no-v-html': 0,
       '@typescript-eslint/no-unused-vars': 'warn',
-      'no-unused-vars': 'off'
-    }
+      'no-unused-vars': 'off',
+    },
   },
   {
     files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],
     languageOptions: {
       globals: {
-        ...globals.jest
-      }
-    }
+        ...globals.jest,
+      },
+    },
   },
   {
-    ignores: ['dist/', 'node_modules/', '*.d.ts']
-  }
+    ignores: ['dist/', 'node_modules/', '*.d.ts'],
+  },
 ]

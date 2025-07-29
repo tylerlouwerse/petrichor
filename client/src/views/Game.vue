@@ -4,6 +4,7 @@
     <GameWorld class="game-world" @tile-click="onTileClick" />
 
     <!-- Game UI Overlay -->
+    <UserInterface />
     <div class="game-ui">
       <!-- Top HUD -->
       <div class="top-hud">
@@ -23,6 +24,7 @@
 import { onMounted } from 'vue'
 import GameWorld from '../components/GameWorld.vue'
 import PlayerStats from '../components/UI/PlayerStats.vue'
+import UserInterface from '../components/UI/UserInterface.vue'
 import ConnectionStatus from '../components/UI/ConnectionStatus.vue'
 import { useGameStore, type WorldTile, type Position3D } from '../stores/game'
 
